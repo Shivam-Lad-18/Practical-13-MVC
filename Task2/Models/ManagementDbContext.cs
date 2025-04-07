@@ -13,7 +13,7 @@ namespace Task2.Models
         // If you wish to target a different database and/or database provider, modify the 'ManagementDbContext' 
         // connection string in the application configuration file.
         public ManagementDbContext()
-            : base("name=ManagementDbContext")
+            : base("name=ManagementDb")
         {
         }
 
