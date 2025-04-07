@@ -2,19 +2,30 @@
     ViewBag.Title = "Home Page";
 }
 
-<main>
-    @Html.ActionLink("List of Employees", "Index", "Employee")
-    @Html.ActionLink("List of Designations", "Index", "Designation")
+<main class="container mt-4">
 
-    <br />
-    <br />
-    <br />
-    @*Add a button to the page and on click of that button, Columns should be displayed with the help of LINQ query. Columns are Employee Id, First Name, Middle Name, Last Name, Designation Name, DOB, Mobile Number, Address & Salary*@
-    <a href="@Url.Action("Query1", "Home")" class="btn btn-primary" style="margin-bottom: 20px;">
-        Show Employee Details
-    </a>
-    @*Add a button to the page and on click of that button, display the count number of records of the employee by designation name using LINQ query.*@
-    <a href="@Url.Action("Query2", "Home")" class="btn btn-primary" style="margin-bottom: 20px;">
-        Show Employee Count by Designation
-    </a>
+    <h2 class="mb-4">Navigation</h2>
+    <div class="mb-4">
+        <a href="@Url.Action("Index", "Employee")" class="btn btn-outline-primary me-2">List of Employees</a>
+        <a href="@Url.Action("Index", "Designation")" class="btn btn-outline-secondary">List of Designations</a>
+    </div>
+
+    <hr />
+
+    <h3 class="mb-3">LINQ Queries</h3>
+
+    <div class="mb-3">
+        <p><strong>Query 1:</strong> Display all employee details (Employee ID, First Name, Middle Name, Last Name, Designation Name, DOB, Mobile Number, Address, and Salary).</p>
+        <a href="@Url.Action("Query1", "Home")" class="btn btn-primary">
+            Show Employee Details
+        </a>
+    </div>
+
+    <div class="mb-3">
+        <p><strong>Query 2:</strong> Show number of employees grouped by Designation Name.</p>
+        <a href="@Url.Action("Query2", "Home")" class="btn btn-success">
+            Show Employee Count by Designation
+        </a>
+    </div>
+
 </main>

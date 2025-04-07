@@ -1,34 +1,35 @@
 ﻿@model IEnumerable<Task2.Models.DesignationT2>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Designation List";
 }
 
-<h2>Index</h2>
+<h2 class="mb-4">Designation List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-    @Html.ActionLink("Home", "Index", "Home")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+<div class="mb-3">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary me-2" })
+    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-secondary" })
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+</div>
 
+<table class="table table-bordered table-hover shadow-sm">
+    <thead class="table-light">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th style="width: 200px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-warning me-1" }) 
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-info me-1" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
+            </td>
+        </tr>
+    }
+    </tbody>
 </table>

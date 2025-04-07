@@ -4,23 +4,22 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="mb-4">Designation Details</h2>
 
-<div>
-    <h4>DesignationT2</h4>
+<div class="card shadow-sm p-4">
+    <h4 class="mb-3">Designation Info</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="row">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Name)
         </dd>
-
     </dl>
+
+    <div class="mt-4">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary me-2" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
